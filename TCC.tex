@@ -1,0 +1,181 @@
+\documentclass[12pt,twoside,final]{article}
+
+\usepackage[portuguese,brazil]{babel}
+\usepackage[utf8]{inputenc}
+
+
+
+%\usepackage{indentfirst, natbib}
+\usepackage{indentfirst}
+
+\usepackage{hyperref,ae}
+% \usepackage{harvard}
+\usepackage{pslatex}  %fonte times new roman
+\usepackage{amssymb,fancyhdr,fancybox,epsfig,psfrag,amsmath,tabularx}
+\usepackage[paperwidth=8.5in,paperheight=11in,hmargin={25mm,20mm},vmargin={20mm,20mm}]{geometry} %tamanho letter
+\usepackage{graphicx, url}
+%\usepackage{subfigure,tocloft}
+
+%\setlength{\cftsubsecnumwidth}{0pt}
+%\renewcommand{\cftsubsecaftersnumb}{\hspace{1.5em}}
+%\setlength{\cftsubsecindent}{0em}
+%\setlength{\cftsubsubsecindent}{0em}
+
+\usepackage{caption}
+%\captionsetup{labelsep=endash}
+%\DeclareCaptionLabelSeparator*{cap_travessao}{--}
+
+\usepackage{multirow}
+\usepackage[lined,ruled,vlined,linesnumbered,portuguese]{algorithm2e}
+\usepackage{ulem,soul}
+\usepackage[dvips]{lscape} %rotacionar
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{wrapfig, graphics,multirow}
+\usepackage{array}
+\usepackage[dvipsnames,svgnames,x11names,table,xcdraw]{xcolor} 
+\usepackage{colortbl,caption}
+\usepackage{pdfpages}
+\usepackage{enumitem,comment}  
+%\usepackage[titletoc,toc,page]{appendix}
+\usepackage[titletoc,title]{appendix}
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+%\usepackage[title]{appendix}
+%\newcommand{\source}[1]{\caption*{Source: {#1}}}
+%\renewcommand{\appendixtocname}{Ap\^endices}
+%\renewcommand{\appendixpagename}{Ap\^endices}
+
+%Center T�tulo do S�mario
+%\renewcommand{\cfttoctitlefont}{\normalfont\Large\bfseries\MakeUppercase}
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\large\bfseries\MakeUppercase}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+%Center T�tulo do 
+\renewcommand{\cftlottitlefont}{\hspace*{\fill}\large  \bfseries}
+\renewcommand{\cftafterlottitle}{\hspace*{\fill}}
+%Center T�tulo da Lista de Figuras 
+\renewcommand{\cftloftitlefont}{\hspace*{\fill}\large \bfseries}
+\renewcommand{\cftafterloftitle}{\hspace*{\fill}}
+
+
+%\renewcommand{\listfigurename}{LIST OF FIGURES}
+%\renewcommand{\listtablename}{LIST OF TABLES}
+
+%\renewcommand\listtablename{LISTA DE TABELA}
+
+
+
+\definecolor{lightgray}{gray}{0.8}
+\definecolor{mediumgray}{gray}{0.75}
+
+\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{0.39,0.58,1}
+\definecolor{labeled}{rgb}{1,0,0}
+\usepackage[Lenny]{fncychap}
+\setlength{\headheight}{15pt}
+\setlength{\parindent}{1.2cm}
+\usepackage[num,abnt-repeated-author-omit=yes,abnt-emphasize = bf]{abntex2cite}
+%=========================================== Headers =========================================
+
+% \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. \ #1}{ }}
+\renewcommand{\sectionmark}[1]{\markright{\thesection. \ #1}}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+%\fancyhead[RE]{\nouppercase{\leftmark}}
+%\fancyhead[LO]{\nouppercase{\rightmark}}
+%==============================================================================================
+
+\hyphenation{pro-fis-si-o-nais}
+
+% \input{macros}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+
+\renewcommand{\listtablename}{LISTA TABELAS} 
+\renewcommand{\listfigurename}{LISTA  FIGURAS}
+
+%\defbibheading{bibliography}{\centering The New Name}
+
+\begin{document}
+
+
+\thispagestyle{empty}
+
+
+%PPC em portugu�s
+\input{capaNew}
+\newpage
+
+%=============================== lista de tabelas e figuras ==========================
+{\thispagestyle{empty}
+\renewcommand{\listfigurename}{LISTA DE FIGURAS}
+
+\listoffigures}
+\newpage
+
+{\thispagestyle{empty}
+\renewcommand{\listtablename}{LISTA DE TABELAS}
+\listoftables}
+\newpage
+
+\input{Siglas}
+
+\newpage
+
+%=============================== sum�rio =============================================
+
+\tableofcontents
+
+\newpage
+%caso o sum�rio acabe em uma p�gina �mpar, o verso ser� em branco
+%\null \vfill
+%\newpage
+
+%Agora muda para o estilo fancy
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\setcounter{page}{12}
+\onehalfspacing
+
+\newpage
+\include{cap1}
+\include{cap2}
+\include{cap3}
+\include{cap4}
+\include{cap5}
+
+\nocite{NBR6023,NBR6024,NBR6027,NBR6028,NBR10520,NBR14724,IBGE,CEFET_2007,CEFET_2014}
+
+
+%@manual{CEFET_2014,
+%address={Petrópolis (RJ)},
+%organization={CELSO FEDERAL DE EDUCAÇÃO TECNOLÓGICO CELSO SUCKOW DA FONSECA. Campus Petrópolis. Coordenação de %Trabalho %de Conclusão de Curso},
+%title={Manual para elaboração de Trabalho de Conclusão de Curso (TCC)},
+%year={2014}
+%}
+
+%%% Bibliografia %%%
+%\addcontentsline{toc}{section}{Refer�ncias}
+%\bibliographystyle{apateste}
+
+%\bibliographystyle{abnt-alf}
+{
+\thispagestyle{empty}
+\renewcommand{\refname}{REFERÊNCIAS}
+\bibliography{bibliografia}
+}
+
+\newpage
+\begin{comment}
+\begin{appendices}
+%\renewcommand{\chaptername}{Ap�ndice}
+\include{apendiceA_TCC}
+\include{apendiceC_TCC}
+%\include{apendiceD}
+\end{appendices}
+\end{comment}
+
+\end{document}
