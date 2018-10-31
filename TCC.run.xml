@@ -80,8 +80,5 @@
     <requires type="dynamic">
       <file>TCC.bcf</file>
     </requires>
-    <requires type="editable">
-      <file>biblatex-examples.bib</file>
-    </requires>
   </external>
 </requests>
