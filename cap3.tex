@@ -2,12 +2,44 @@
 
 \subsection{Arquitetura do sistema}
 
+Para o trabalho utilizamos um desktop com 32GB de RAM i7-4790K CPU @ 4.00GHz com placa de vídeo GeForce GTX 980.
 
-\subsection{Modelos de NN considerados e sua avaliação}
+\subsubsection{TensorFlow}
 
+O aprendizado de máquina é uma disciplina complexa. Porém, hoje, a implementação de modelos de aprendizado de máquina é mais simples do que costumava ser, graças aos frameworks de aprendizado de máquina, como o TensorFlow, que facilitam o processo de aquisição de dados, modelos de treinamento, previsões e refinamento de resultados futuros.
+
+%https://www.infoworld.com/article/3278008/tensorflow/what-is-tensorflow-the-machine-learning-library-explained.html
+
+%https://aws.amazon.com/pt/tensorflow/
+
+O TensorFlow é uma biblioteca de software de código aberto para computação numérica que usa gráficos de fluxo de dados. Os nós no gráfico representam operações matemáticas, e as arestas representam as matrizes ou tensores de dados multidimensionais que se comunicam com os nós. Essa arquitetura flexível permite a implantação de aplicações a uma ou mais CPUs ou GPUs em um desktop, servidor ou dispositivo móvel sem reescrever o código. O TensorFlow também inclui o TensorBoard, um kit de ferramentas de visualização de dados. O TensorBoard é um conjunto web de aplicativos para inspecionar e entender suas execuções e gráficos do TensorFlow.
+
+O TensorFlow foi desenvolvido originalmente por pesquisadores e engenheiros que trabalham na equipe do Google Brain, na organização Machine Intelligence Research do Google, com o objetivo de realizar pesquisas sobre redes neurais profundas e aprendizado de máquina. Ele fornece tudo para o programador por meio da linguagem Python. O Python é fácil de aprender e trabalhar. Nós e tensores em TensorFlow são objetos Python, e os aplicativos TensorFlow são aplicativos em Python.
+
+As operações matemáticas reais, entretanto, não são executadas no Python. As bibliotecas de transformações que estão disponíveis através do TensorFlow são escritas como binários C ++ de alto desempenho. O Python apenas direciona o tráfego entre as partes e fornece abstrações de programação de alto nível para conectá-las.
+
+O maior benefício que o TensorFlow oferece para o desenvolvimento de aprendizado de máquina é a abstração. Em vez de lidar com os detalhes básicos da implementação de algoritmos, ou de descobrir formas adequadas de ligar a saída de uma função à entrada de outra, o desenvolvedor pode se concentrar na lógica geral da aplicação. TensorFlow cuida dos detalhes nos bastidores.
+
+
+\subsubsection{Keras}
 Keras é uma API de redes neurais de alto nível, escrita em Python e capaz de rodar em cima do TensorFlow, CNTK ou Theano que pode rodar na CPU ou GPU.
 
+Princípios orientadores
+
+Facilidade de utilização: Keras é uma API projetada para seres humanos, não para máquinas. Coloca a experiência do usuário na frente e no centro. I Keras segue as práticas recomendadas para reduzir a carga cognitiva: ele oferece APIs consistentes e simples, minimiza o número de ações do usuário necessárias para casos de uso comuns e fornece um feedback claro e acionável sobre o erro do usuário.
+
+Modularidade: Um modelo é entendido como uma sequência ou um gráfico de módulos autônomos configuráveis que podem ser conectados com o menor número de restrições possível. Em particular, camadas neurais, funções de custo, otimizadores, esquemas de inicialização, funções de ativação, esquemas de regularização são todos módulos independentes que você pode combinar para criar novos modelos.
+
+Extensibilidade fácil: Novos módulos são simples de adicionar (como novas classes e funções), e os módulos existentes fornecem exemplos amplos. Poder criar facilmente novos módulos permite total expressividade, tornando Keras adequado para pesquisa avançada.
+
+Trabalhe com o Python: Não há arquivos de configuração de modelos separados em um formato declarativo. Os modelos são descritos em código Python, que é compacto, mais fácil de depurar e permite a facilidade de extensibilidade.
+
 Aplicações Keras são modelos de deep learning que são disponibilizados juntamente com pesos pré-treinados. Esses modelos podem ser usados para previsão, extração de recursos e ajuste fino.
+
+%https://keras.io/#keras-the-python-deep-learning-library
+
+\subsection{Modelos de redes neurais considerados e sua avaliação}
+
 
 Os modelos disponíveis para classificação de imagens com pesos treinados no ImageNet são:
 

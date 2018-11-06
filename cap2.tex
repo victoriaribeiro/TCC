@@ -1,9 +1,15 @@
 \section{Trabalhos Relacionados \label{sec:trab_rel}}
 
+Este capítulo apresenta uma visão geral dos fundamentos teóricos para a construção do trabalho. Além disso, mostramos uma perspectiva sobre as pesquisas atuais e novas tecnologias que estão no mercado que utilizam técnicas de redes neurais convolucionais.
+
+O capítulo é organizado assim: A seção \ref{subsec:app_web} mostra aplicativos, websites e sistemas em geral que estão no mercado relacionados à reconhecimento de itens alimentares em fotos. Em seguida, a seção \ref{subsec:nn} faz uma breve introdução sobre redes neurais artificiais, explicando primeiro sua inspiração biológica, na sequência seu uso computacional e, por fim, detecção e reconhecimento de alimentos em imagens com o uso de redes neurais convolucionais.
+
+\begin{comment}
 \subsection*{Introdução}
 
 \subsubsection*{Descrição geral do que tratará esta seção}
 \subsubsection*{Organização desta seção}
+\end{comment}
 
 \subsection{Aplicativos, websites e sistemas em geral \label{subsec:app_web}}
 
@@ -53,11 +59,17 @@ A ideia do nosso trabalho de gerar uma pontuação a partir de uma foto da refei
 A dieta do Vigilantes do Peso \cite{vigilantes_do_peso} é um programa alimentar que envolve pontos. Para cada alimento é atribuido um número, quanto menos pontos um item representa, maior é a saciedade que ele proporciona e menos calorias contém. A pessoa recebe sua cota diária personalizada e passa a calcular essa pontuação diariamente a partir dos alimentos consumidos. Atualmente, eles oferecem um sistema de contagem de pontos conhecido como ProPontos mantém a marca registrada de pontuação dos alimentos, onde é possível, também, ganhar pontos ao fazer exercícios físicos, chamados de PontosFit.
 
 \newpage
-\subsection{Redes Neurais Artificiais\label{subsec:nn}}
+
+
+\subsection{Redes Neurais Artificiais para Reconhecimento de Alimentos} \label{subsec:nn}
+
+Neste capítulo, são apresentados alguns dos métodos detecção e reconhecimento de alimentos através de imagens. O objetivo aqui é descrever as vantagens e principais desvantagens desses métodos e seus respectivos resultados. 
+
+\subsubsection{Redes Neurais Artificiais\label{subsubsec:ann}}
 
 Redes Neurais Artificiais (RNA) são estruturas computacionais inspiradas no sistema nervoso de seres vivos. Uma RNA pode ser usada para diversos tipos de tarefas como visão computacional, reconhecimento de fala, análise médica e video-games. Em todas essas aplicações, o objetivo por trás da rede é aprender a realizar a tarefa se baseando apenas em exemplos, geralmente sem nenhuma regra específica relacionada a tarefa. Todas as redes neurais artificais são formadas por uma coleção de nós, chamados de neurônios artificais.
 
-\subsubsection{Inspiração Biológica}
+% \subsubsection{Inspiração Biológica}
 
 Um neurônio, que pode ser visto na figura \ref{fig:neuron} é uma célula que recebe, processa e transmite informações através de sinais elétricos e químicos. Esse processo começa nos dendritos, que recebem estímulos de fora. O resultado desses estímulos é processado pela soma, que envia a resposta final através do axônio. Essa resposta é propagada pelo corpo através das sinapses.
 
@@ -65,12 +77,13 @@ Um neurônio, que pode ser visto na figura \ref{fig:neuron} é uma célula que r
 \centering 
 \caption{Neurônio}
 \label{fig:neuron}
-\includegraphics[width=0.7\textwidth]{imgs/neuronio.jpg}
+\includegraphics[width=0.65\textwidth]{imgs/neuronio.jpg}
+\caption*{Fonte: significados.com (2018)}
 \end{figure}
 
 Uma rede neural artificial é baseada nos neurônios do cérebro humano. Nesse caso, cada conexão, assim como as sinapses, transmitem sinais de um neurônio artificial para o outro. Um neurônio artificial processa esse sinal e envia para outros conectados a ele. Na grande maioria das implementações de redes neurais artificais, o sinal enviado entre os neurônios é um número real e a saída de cada neurônio é dada por alguma função não-linear de suas entradas.
 
-\subsubsection{Uso Computacional}
+% \subsubsection{Uso Computacional}
 Na figura \ref{fig:rna} temos um exemplo genérico de rede neural artificial. Na maior parte das implementações de Redes Neurais Artificias, o sinal enviado entre neurônios é um número real e a saída para neurônio artificial é dada por alguma função não-linear dos valores de suas entradas. Conexões entre neurônios são chamadas de arestas. As arestas e os neurônios geralmente tem pesos que são ajustados conforme o aprendizado ocorre. 
 
 \def\layersep{3.5cm}
@@ -115,31 +128,22 @@ Na figura \ref{fig:rna} temos um exemplo genérico de rede neural artificial. Na
   \node[annot,left of=hl] {Camada de entrada};
   \node[annot,right of=hl] {Camada de saída};
 \end{tikzpicture}
+\caption*{Fonte: O autor (2018)}
 \end{figure}
 
-\subsection{Redes Neurais Artificiais para Reconhecimento de Alimentos}
-
-Neste capítulo, são apresentados alguns dos métodos detecção e reconhecimento de alimentos através de imagens. O objetivo aqui é descrever as vantagens e principais desvantagens desses métodos e seus respectivos resultados. 
-
-
+\newpage
 % \subsection{Detecção e Reconhecimento de Imagens}
 A detecção e reconhecimento de imagens contendo alimentos são tópicos frequentemente pesquisados na área de visão computacional. Existem vários artigos publicados com diferentes abordagens para resolver esses dois problemas.  
 
 \subsubsection{Detecção de Alimentos em Imagem}
 A detecção de alimentos é diferente do reconhecimento alimentos, pois a primeira é uma classificação binária de imagens em imagens alimentares e não-alimentares, isto é, se contém comida ou não. Dada uma imagem, em que pode conter comida e fundo, a detecção de alimentos classifica a imagem como alimentar ou não-alimentar.
 
-A Rede Neural Convolucional (CNN) oferece a mais recente técnica para muitos problemas gerais de classificação de imagem. Kagaya \cite{kagaya2014food} aplicou a CNN na classificação alimentar/não-alimentar e obteve resultados significativos com uma acurácia de 93,8\%. E, no trabalho \cite{kagaya2015highly}, a acurácia na detecção de alimentos foi aumentada para 99,1\%.
-
-Esses resultados expressam que, em relação a trabalhos anteriores que utilizavam abordagens convencionais de aprendizado de máquina, a utilização de CNN aparenta mostrar uma melhor performance.
+A Rede Neural Convolucional (CNN) oferece a mais recente técnica para muitos problemas gerais de classificação de imagem. Kagaya \cite{kagaya2014food} aplicou a CNN na classificação alimentar/não-alimentar e obteve resultados significativos com uma acurácia de 93,8\%. E, no trabalho \cite{kagaya2015highly}, a acurácia na detecção de alimentos foi aumentada para 99,1\%. Esses resultados expressam que, em relação a trabalhos anteriores que utilizavam abordagens convencionais de aprendizado de máquina, a utilização de CNN aparenta mostrar uma melhor performance.
 
 \subsubsection{Reconhecimento de Alimentos em Imagem}
-A maioria dos trabalhos de pesquisa em reconhecimento de alimentos assumem que apenas um alimento está presente na imagem. Assim, o reconhecimento de alimentos pode ser resolvido como um problema de classificação multi-classes. 
-
-A CNN também é amplamente utilizada no reconhecimento de alimentos e fornece melhor desempenho do que os métodos convencionais. 
+A maioria dos trabalhos de pesquisa em reconhecimento de alimentos assumem que apenas um alimento está presente na imagem. Assim, o reconhecimento de alimentos pode ser resolvido como um problema de classificação multi-classes. A CNN também é amplamente utilizada no reconhecimento de alimentos e fornece melhor desempenho do que os métodos convencionais. 
 
 Kagaya \cite{kagaya2014food} também treinou uma CNN para reconhecimento de alimentos e os resultados experimentais mostraram que a CNN superou todas as outras abordagens clássicas alcançando uma acurácia média de 73,7\% para 10 classes. Singla \cite{singla2016food} aplicou um modelo GoogLeNet pré-treinado baseado na arquitetura CNN nas tarefas de classificação de imagens alimentares/não-alimentares e para reconhecimento de categoria de alimentos. Os resultados experimentais mostram a precisão geral de 99,2\% na classificação alimentar/não-alimentar e 83,6\% na categorização de alimentos. 
 
-A detecção e identificação de alimentos tem sido investigada na literatura em diferentes trabalhos, como os citados acima, inclusive \cite{aguilar2017food} e \cite{pouladzadeh2017cloud} em que foi evidenciado que os melhores resultados obtidos são baseados em Redes Neurais Convolucionais (CNN).
-
-
+A detecção e identificação de alimentos tem sido investigada na literatura em diferentes trabalhos, como os citados acima, inclusive \cite{aguilar2017food} e \cite{pouladzadeh2017cloud}.  Foi evidenciado através desses trabalhos que os melhores resultados obtidos são baseados em Redes Neurais Convolucionais (CNN).
 
